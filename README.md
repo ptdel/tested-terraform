@@ -1,7 +1,8 @@
 Terraform Module Template
 =========================
 This repository provides a template for creating new Terraform modules.
-It's intended to demonstrate how one might go about standardizing their modules and subjecting them to integration tests in CI.
+It's intended to demonstrate how one might go about standardizing their
+modules and subjecting them to integration tests in CI.
 
 Table of Contents
 -----------------
@@ -125,7 +126,8 @@ certain rules on modules.
 
 ### Default Template Behaviors
 This template also utilizes multiple [GitHub Applications][10] to provide
-extended functionality on a module repository.  Specifically, the following applications are used:
+extended functionality on a module repository.  Specifically, the following
+applications are used:
 * [Welcome][13]
 * [delete-merged-branch][14]
 * [create-issue-branch][15]
@@ -137,7 +139,8 @@ For more information on configuring GitHub applications, please consult the
 [documentation][11].
 
 **NOTE** you can store extension configurations in another repository and
-override their values as needed in a module repository.  It's out of scope for this documentation so I'm not going to demonstrate it.
+override their values as needed in a module repository.  It's out of scope for
+this documentation so I'm not going to demonstrate it.
 
 Local Testing
 -------------
@@ -313,7 +316,7 @@ Contributors
 [5]: https://www.conventionalcommits.org/en/v1.0.0/#summary
 [6]: https://github.com/semantic-release/semantic-release
 [7]: https://www.semver.org/
-[8]: https://github.com/ptdel/module-template/releases
+[8]: https://github.com/ptdel/tested-terraform/releases
 [9]: https://github.com/segmentio/terraform-docs
 [10]: https://github.com/marketplace
 [11]: https://probot.github.io/docs/best-practices#store-configuration-in-the-repository
