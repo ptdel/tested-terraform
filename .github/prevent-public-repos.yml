@@ -1,0 +1,18 @@
+# Prevent Public Repos
+# https://github.com/issc29/probot-prevent-public-repos
+
+# actively converts repositories to private when set to 'false'
+monitorOnly: false
+
+# converts existing repositories as well as new repositories.
+enablePrivateToPublic: true
+
+# messaging information when a public repository is created
+privatizedIssueTitle: '[CRITICAL] Public Repositories are not allowed!'
+privatizedIssueBody: 'This repository will automatically be converted to private'
+
+# Users/Groups that will be cc'd of events
+ccList: '@ptdel'
+
+# Repositories to exclude from detection
+# excludeRepos: ['repo']

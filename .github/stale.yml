@@ -1,0 +1,17 @@
+# Stale
+# https://github.com/probot/stale
+
+daysUntilStale: 30
+daysUntilClose: false
+
+exemptLabels:
+  - LTS
+  - pinned
+  - security
+
+staleLabel: wontfix
+
+markComment: >
+  This issue has been automatically marked as stale due to lack of activity.
+
+closeComment: false

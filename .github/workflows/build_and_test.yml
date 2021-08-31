@@ -1,0 +1,50 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - '*'
+
+env:
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    AWS_DEFAULT_REGION: us-east-1
+
+jobs:
+  format:
+    name: Format and Lint Terraform Module
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+    - name: Format and Validate Terraform Module
+      run: |
+        terraform init
+        terraform validate -json
+        terraform fmt -check -recursive
+
+    - name: Validate Terraform Module Provider Logic
+      run: |
+        curl -L "$(curl -Ls https://api.github.com/repos/terraform-linters/tflint/releases/latest | grep -o -E "https://.+?_linux_amd64.zip")" -o tflint.zip && unzip tflint.zip && rm tflint.zip
+        chmod +x tflint && ./tflint *.tf
+
+  test:
+    name: Unit Test Terraform Module
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-go@v1
+      with:
+        go-version: '1.13'
+    - name: Install Terratest and Testing Dependencies
+      run: |
+        go get github.com/gruntwork-io/terratest/modules/terraform \
+        github.com/gruntwork-io/terratest/modules/aws              \
+        github.com/stretchr/testify/require                        \
+        golang.org/x/net/context                                   \
+        golang.org/x/crypto/ssh
+
+    - name: Run Tests Against Terraform Module
+      run: |
+        go test -v ./test -timeout 30m

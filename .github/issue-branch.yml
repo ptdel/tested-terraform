@@ -1,0 +1,14 @@
+# Create Issue Branch
+# https://github.com/robvanderleek/create-issue-branch
+
+mode: auto  # or "chatops"
+silent: true
+branchName: short  # or "tiny", "full"
+
+
+# Branch Prefix based on Issue Labels
+branches:
+  - label: enhancement
+    prefix: feature/
+  - label: bugf
+    prefix: bugfix/

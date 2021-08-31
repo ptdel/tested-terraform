@@ -1,0 +1,27 @@
+name: Release
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  release:
+    name: Dry-Run Github Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "13.x"
+      - name: Install and Run Semantic Release
+        run: |
+          npm install -g semantic-release            \
+          "@semantic-release/changelog"              \
+          "@semantic-release/commit-analyzer"        \
+          "@semantic-release/git"                    \
+          "@semantic-release/github"                 \
+          "@semantic-release/exec"                   \
+          "@semantic-release/release-notes-generator"
+          npx semantic-release --dry-run --branches release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE }}

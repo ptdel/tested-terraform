@@ -1,0 +1,37 @@
+# Semantic Pull Requests
+# https://github.com/zeke/semantic-pull-requests
+
+
+# Always validate the Pull Request title and the commits.
+titleAndCommits: true
+
+# Require at least one commit to be valid.
+anyCommit: true
+
+
+# Valid scopes
+scopes: 
+  - doc
+  - module
+  - cicd
+  - test
+  - scm
+
+# Valid types
+types:
+  - feat
+  - fix
+  - improvement
+  - docs
+  - style
+  - refactor
+  - perf
+  - test
+  - build
+  - ci
+  - chore
+  - revert
+
+
+# Allow use of Merge commits (eg "Merge branch 'X' into 'Y'")
+allowMergeCommits: true

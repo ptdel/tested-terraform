@@ -1,0 +1,31 @@
+{
+  "branch": "master",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changelogTitle": "# Changelog"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "make all"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "module.md",
+          "module.zip",
+          "module_and_tests.zip"
+        ]
+      }
+    ]
+  ]
+}

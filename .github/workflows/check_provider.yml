@@ -1,0 +1,17 @@
+name: Check for Terraform Provider
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+    - name: Ensure no Provider line Present in HCL
+      run: |
+        grep -q "^provider"  *.tf && exit 1 || exit 0
