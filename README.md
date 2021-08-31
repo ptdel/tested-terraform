@@ -208,7 +208,7 @@ takes it as a data source.
 
 We tell terraform to use localstack by passing it provider info.  In this case,
 it's in a local.tf file.
-```json
+```hcl
 provider "aws" {
   region                      = "us-east-1"
   access_key                  = "localkey"
