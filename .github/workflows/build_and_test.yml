@@ -41,9 +41,7 @@ jobs:
       run: |
         go get github.com/gruntwork-io/terratest/modules/terraform \
         github.com/gruntwork-io/terratest/modules/aws              \
-        github.com/stretchr/testify/require                        \
-        golang.org/x/net/context                                   \
-        golang.org/x/crypto/ssh
+        github.com/stretchr/testify/assert
 
     - name: Run Tests Against Terraform Module
       run: |
