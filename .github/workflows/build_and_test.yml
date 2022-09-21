@@ -34,15 +34,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-go@v1
+    - uses: actions/setup-go@v3
       with:
-        go-version: '1.13'
-    - name: Install Terratest and Testing Dependencies
-      run: |
-        go get github.com/gruntwork-io/terratest/modules/terraform \
-        github.com/gruntwork-io/terratest/modules/aws              \
-        github.com/stretchr/testify/assert
-
+        go-version: '1.19'
+        check-latest: true
+        cache: true
+        cache-dependency-path: test/go.sum
     - name: Run Tests Against Terraform Module
       run: |
         go test -v ./test -timeout 30m
