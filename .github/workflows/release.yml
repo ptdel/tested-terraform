@@ -10,8 +10,8 @@ jobs:
     name: Create a Github Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: "17.x"
       - name: Install and Run Semantic Release
