@@ -42,4 +42,6 @@ jobs:
         cache-dependency-path: test/go.sum
     - name: Run Tests Against Terraform Module
       run: |
-        go test -v ./test -timeout 30m
+        cd test
+        go mod init
+        go test -v . -timeout 30m
