@@ -1,5 +1,5 @@
 {
-  "branch": "master",
+  "branch": "main",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -21,7 +21,6 @@
       {
         "assets": [
           "CHANGELOG.md",
-          "module.md",
           "module.zip",
           "module_and_tests.zip"
         ]

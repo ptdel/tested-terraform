@@ -1,9 +1,0 @@
-# Delete Merged Branch
-# https://github.com/SvanBoxel/delete-merged-branch
-
-# Branches excluded from being auto-pruned
-exclude:
-  - develop
-
-# Remove pull request branches after they're closed.  
-delete_closed_pr: true
