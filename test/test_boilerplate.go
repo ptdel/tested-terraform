@@ -5,7 +5,7 @@ package test
 import (
 	"testing"
 	"github.com/gruntwork-io/terratest/modules/terraform"
-	"github.com/stretchr/testify/assert"
+	//"github.com/stretchr/testify/assert"
 )
 
 // Module tests, using default or provided values.
