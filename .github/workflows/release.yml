@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
 
@@ -13,11 +13,9 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
-          node-version: "13.x"
+          node-version: "17.x"
       - name: Install and Run Semantic Release
         run: |
-          curl -Ls https://github.com/segmentio/terraform-docs/releases/download/v0.8.2/terraform-docs-v0.8.2-linux-amd64 -o terraform-docs
-          chmod +x terraform-docs && ./terraform-docs markdown document . > module.md
           npm install -g semantic-release            \
           "@semantic-release/changelog"              \
           "@semantic-release/commit-analyzer"        \
