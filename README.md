@@ -128,12 +128,8 @@ certain rules on modules.
 This template also utilizes multiple [GitHub Applications][10] to provide
 extended functionality on a module repository.  Specifically, the following
 applications are used:
-* [Welcome][13]
-* [delete-merged-branch][14]
-* [create-issue-branch][15]
 * [prevent-public-repos][16]
 * [semantic-pull-requests][17]
-* [stale][18]
 
 For more information on configuring GitHub applications, please consult the
 [documentation][11].
@@ -321,12 +317,8 @@ Contributors
 [10]: https://github.com/marketplace
 [11]: https://probot.github.io/docs/best-practices#store-configuration-in-the-repository
 [12]: https://github.com/ptdel/ExtensionConfiguration
-[13]: https://probot.github.io/apps/welcome/
-[14]: https://github.com/SvanBoxel/delete-merged-branch
-[15]: https://github.com/robvanderleek/create-issue-branch
 [16]: https://github.com/issc29/probot-prevent-public-repos
 [17]: https://github.com/zeke/semantic-pull-requests
-[18]: https://github.com/probot/stale
 [19]: https://github.com/localstack/localstack
 [20]: https://www.terraform.io/docs/language/modules/index.html
 [21]: https://terratest.gruntwork.io/docs/getting-started/quick-start/
